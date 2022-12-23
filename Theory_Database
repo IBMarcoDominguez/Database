@@ -1,0 +1,147 @@
+ El lenguaje de programación de una base de datos puede ser cualquiera: python,sql,etc.
+
+ Para empezar tenemos nuestra aplicación web, que podra acceder desde un telefono,
+ computadora,etc. los datos con los que estara trabajando la app sera desde un servidor,
+ este servidor guardara en una base de datos toda la informacion y estara: verificando,
+ enviando y reciviendo información de manera sistematica.
+
+ id = identifiación de registro de los datos que se esta trabajando
+ tablas = Se guardan registros que puede soportar el disco duro
+ registro = tipos de datos que estan relacionados a la información
+ informacion = valores relevantes para una aplicacion de software
+
+ las bases de datos se desarrollan a traves del concepto de tablas las cuales estaran
+ trabajando en armonia de manera que nunca se pierda los conceptos clave: orden y logica.
+
+ En la siguiente tabla se puede notar que tiene el "id" de manera incrementable-numerico y 
+ ordenando esto permite guardar y buscar de manera ordenada los datos dentro de la tabla,
+ la tabla lleva de nombre "primera tabla" este nombre nos permitira acceder a los datos
+ que contenga la tabla, ubvicar la tabla correspondiente y ordenar de manera logica los
+ datos, los registros dentro de las secciones nombre y correo son tipos de datos 
+ alfanumericos, sin importar el tipo de dato n tecnicamente estos valores son la 
+ informacion relevante que en teoria se le tiene que dar razon de ser o de utilidad
+ practicamente los datos dentro de las secciones son los registros que estan representados
+ en diferentes tipos de datos dichos datos tienen razon de ser desde la aplicación, son
+ datos asta que se les de una utilidad, esta informacion esta resgistrada en la tabla,
+ por ello la importancia del nombre de la tabla, un nombre significativo y presiso
+ para acceder de manera logica y ordenada a la informacion. 
+
+
+        Primera Tabla
+ ------------------------------
+ ID| nombre    | correo       |
+ ------------------------------
+ 1 | Nico      | nico@las.com |
+ ------------------------------
+ 2 | Chabchito | chanchito@j.m|
+ ------------------------------
+ 3 | Felipe    | 1@hotmail.com|
+ ------------------------------
+ 4 |   .....   |              |
+ ------------------------------
+ 5 |   .....   |              |
+ ------------------------------
+
+ Es similar a una hoja de excel....
+
+ "Hay que nombrar a las tablas con nombres en singular"
+
+ Relacion -> 1 a muchos
+ Una tabla (Usuario) puede estar relaciona a una segunda tabla (Post) donde 1 dato de
+ Usuario puede estar relacionado a mas de 1 dato de Post lo que permite trabajar una 
+ relacion de la primera tabla con respecto a la segunda desde un punto de trabajo 
+ 1 dato a muchos datos, 1 valor puede tener una relacion de varios valores, ejemplo:
+
+            Usuario                                     Post
+ ------------------------------          --------------------------------------     
+ ID| nombre    | correo       |          | ID| titulo   | talento | usuario_id|
+ ------------------------------          |-------------------------------------
+ 1 | Nico      | nico@las.com |          | 1 | ...      | ...    |     1      |
+ ------------------------------          |-------------------------------------
+ 2 | Chabchito | chanchito@j.m|          | 2 | ...      | ...    |     1      |
+ ------------------------------          --------------------------------------
+ 3 | Felipe    | 1@hotmail.com|          | 3 | ...      | ...    |     2      |
+ ------------------------------          --------------------------------------
+ 4 |   .....   |              |          | 4 | ...      | ...    |     1      |
+ ------------------------------          --------------------------------------
+ 5 |   .....   |              |          | 5 | ...      | ...    |    ...     |
+ ------------------------------          --------------------------------------
+
+Se mantiene una relacion entre usuario y la cantidad de registros que se haya creado;
+se tiene 1 usuario donde se puede tener muchos registros;
+si lo vemos de post a usuario es de muchos a 1 y de usuario a post es de 1 a muchos.
+
+La cantidad de tablas va relacionado al uso e interpretacion del numero de secciones,
+mientras mas tablas se relacionan mas ordenado y logico debe ser, similar a la 
+teoria de seguridad electrica copo de nieve con respecto a la tierra fisica, la tabla
+padre debe ordenar logicamente a las tablas hijos y las tablas hijos deben trabajar en
+armonia y logica una a la otra, no tiene sentido tener 1 tabla que trabaje sola, respetando
+la analogia los hijos son parientes cercanos 1 amigo no puede ser hermano dentro de una 
+familia que no pertenesca por lo tanto el uso adecuado de la informacion con respecto a sus
+tablas permitira un optimo trabajo hay que tener en todo momento que la memoria es presiada
+y no se debe de desperdiciar por lo tanto hay que evitar tablas redundantes y hay que
+focalizar la teoria orden y logica en todo momento del desarrollo de la DataBase.
+
+    Libros                     Autores                 libros-autores
+ ---------------          ----------------     ----------------------------
+ ID| titulo    |          | ID| nombre   |     | ID | libro_id | autor_id |
+ ---------------          |---------------     ----------------------------
+ 1 | ....      |          | 1 | ...      |     | 1  |    1     |     1    |
+ ---------------          |---------------     ----------------------------
+ 2 | ....      |          | 2 | ...      |     | 2  |    2     |     1    |
+ ---------------          ----------------     ----------------------------
+ 3 | ....      |          | 3 | ...      |     | 3  |    1     |     2    |
+ ---------------          ----------------     ----------------------------
+ 4 | ....      |          | 4 | ...      |     | 4  |    3     |     2    |
+ ---------------          ----------------     ----------------------------
+ 5 | ....      |          | 5 | ...      |     | 5  |    3     |     3    |
+ ---------------          ----------------     ----------------------------
+
+Se puede relacion 2 tablas de muchos a muchos, 1 libro puede tener muchos autores y
+1 autor puede tener muchos libros esto se logra organisando los datos a traves de la 
+tabla libros_autores permitiendo una colaboracion de muchos datos de una tabla para muchos
+datos de la segunda tabla, organizando y ordenando los datos para que trabajen en conjunto
+sin perder orden y logica.
+
+Una ultima relacion poco usada es la de 1 a 1 este tipo de relacion permite trabar
+ tablas que no necesariamente estan trabajando en conjunto pero necesariamente tiene
+ que cumplir con logica y orden todas las secciones de ambar tablas permitiendo una
+ armonia intrinseca entre las n tablas:
+
+           Usuario                                     Contacto
+ ------------------------------          ---------------------------------------     
+ ID| nombre    | correo       |          | ID| titulo   | usuario_id | telefono |
+ ------------------------------          |---------------------------------------
+ 1 | Nico      | nico@las.com |          | 1 | ...      | ...        |     1    |
+ ------------------------------          |---------------------------------------
+ 2 | Chabchito | chanchito@j.m|          | 2 | ...      | ...        |     1    |
+ ------------------------------          ----------------------------------------
+ 3 | Felipe    | 1@hotmail.com|          | 3 | ...      | ...        |     2    |
+ ------------------------------          ----------------------------------------
+ 4 |   .....   |              |          | 4 | ...      | ...        |     1    |
+ ------------------------------          ----------------------------------------
+ 5 |   .....   |              |          | 5 | ...      | ...        |    ...   |
+ ------------------------------          ----------------------------------------
+
+ El detalle de este tipo de relacio son las verificaciones ya que se deben de hacer
+ desde codigo en mabas tablas lo que puede alentar la verificacion de datos repetidos
+ esto puede ser un problema, en relacion 1 a 1 no se debe de repetir los valores en las
+ n tablas ya que esto puede probocar errores en la busqueda e ineficiencia por lo tanto
+ este tipod e relacion hace que sea un poco mas pesado el trabajo en codigo pero mantiene
+ el mismo principio por lo que para bases de datos pequeñas es util ya que no se necesita
+ de muchas tablas para almacenar y armonizar la informacion.
+
+ Los nobres de las tablas de una base de datos siempre deben de estar en un formato
+ singular, el unico dato que no puede ser nulo es el "id" ya que cada vez que se
+ ingresen nuevos datos se debe de utilizar el "id" para referenciar ese dato con un valor
+ de identificacion el "id" se le conoce como "llave primaria" , el "id" externa o de una 
+ tabla distinta a la principal se le conoce como "llave foranea" ya que se encuentra
+ externa a la tabla principal, la tabla principal debe de generar orden y armonia, todas
+ las tablas deben de estar construidas ordenadas y logicas permitiendo en todo momento
+ mantener orden y logica.
+
+ Las partes de una tabla son:
+ -> Nombre de la tabla (nombres en singular)
+ -> Campo (las secciones)
+ -> Registro (datos)
+ -> llaves (primaria para tabla padre y foranea para tablas hijos) 
