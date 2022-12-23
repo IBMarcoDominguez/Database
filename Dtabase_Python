@@ -1,0 +1,61 @@
+import mysql.connector
+
+midb = mysql.connector.connect(
+    host = "localhost",
+    user = "MarcoDominguez",
+    password = "Sharingan152323",
+    database = "prueba"
+)
+
+# cursor = midb.cursor()
+
+"""
+ver definiciones de tablas
+"""
+#cursor.execute("select * from Usuario")
+
+"""
+sql = variable donde se aloja el camando y sintaxy para agregar registros a las tablas de mi base de datos
+values = valores que se usaran dentro del procedimiento de registro
+"""
+#sql = "insert into Usuario (email, username) values (%s,%s)"
+#values = ("micorreo@correo.com.mx","nombreUsuario")
+#cursor.execute(sql,values)
+
+"""
+fetchall = lo que hcae es devolver todas las instancias que encontro en la base de datos 
+y se los asignara a ala variable crada que contiene dicha instancia.
+fechone = lo que hace es devolver la primera instancia de la base de datos y lo asiga
+a la variable crada para contener dicha instancia.
+"""
+
+#midb.commit()
+#print(cursor.rowcount)
+#resultado = cursor.fetchall()
+
+#print(resultado) 
+
+
+##### actualizar datos
+
+# sql  = "update Usuario set email = %s where id = %s"
+# values = ("micorreo@correo.com.mx",4)
+# cursor.execute(sql,values)
+
+#midb.commit()
+
+#print(cursor.rowcount)
+
+#### Eliminar datos
+
+# sql = "delete from Usuario where id = $s"
+# values = (4,)
+# cursor.execute(sql,values)
+# midb.commit()
+
+##### delimitar visualizacion de consultas
+cursor = midb.cursor()
+
+cursor.execute("select * from Usuario limit 2")
+resultado = cursor.fetchall()
+print(resultado)
