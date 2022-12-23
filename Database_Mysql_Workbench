@@ -1,0 +1,60 @@
+# crear una base de datos con el nombre prueba;
+#create database prueba;
+
+# eliminar una base de datos con nombre pureba;
+#drop database prueba;
+
+# crear nuevamente prueba
+#create database prueba;
+
+# Para crear tablas dentro de la base de datos se
+# se necesita indicar que se esta usando la database
+# por lo que se utiliza use prueba;
+#use prueba;
+
+# para crear la tabla Usuario se utiliza
+# create table Uusuario(campos y tipos de datos);
+#create table Usuario(id int,email varchar(255),username varchar(50))
+
+# Para eliminar tablas se utiliza drop
+#drop table Usuario;
+
+# crear nuevamente tabla
+#create table Usuario(id int,email varchar(255),username varchar(50))
+
+# Para agregar columna a una tabla:
+#alter table Usuario add edad int;
+
+# Para eliminar una columna de una tabla
+#alter table Usuario drop column edad;
+
+# Para modificar una columna:
+#emailemailalter table Usuario modify column email varchar(50);
+
+# Para insertar valores a la tabla:
+#insert into Usuario (email,username) values ("marck@gmail.com","MasterChief")
+
+# Para eliminar 1 valor de una tabla:
+#delete from Usuario where email = "marck@gmail.com" limit 1;
+
+# Para asignar una llave primaria:
+#alter table Usuario add primary key (id);
+
+# para hacer id auto increment:
+#alter table Usuario modify column id int AUTO_INCREMENT;
+# ingresamos nuevamente un nuevo registro para probar id
+#insert into Usuario (email,username) values ("dominguez@gmail.com","TonnyDG117")
+
+# Para mostrar los todos los valores de una tabla:
+#select * from Usuario;
+# Mostrar 1 valor en espesifico de la tabla
+#select * from Usuario where email = "marck@gmail.com"
+
+# Para actualizar valores de los regsitros de utiliza:
+#Update Usuario set username = "MasterChief117" where id = "1"
+# Si no se usa where ocurre el error de cambiar todos los registros
+
+
+# para eliminar registros se utiliza delete y se debe
+# de utilizar el uso del where para eliminar...
+#delete from Usuario where id = "2";
